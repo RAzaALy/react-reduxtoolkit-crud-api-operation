@@ -1,0 +1,359 @@
+.App {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #121212;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 1%;
+}
+
+
+.container{
+  width: 65rem;
+  padding: 1rem;
+  background-color: rgba(255,255,255, .05);
+  border-right: .4rem solid rgba(255,255,255, .05);
+  border-top: .4rem solid rgba(255,255,255, .05);
+  color: #fff;
+}
+
+.header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title{
+  font-size: 2.5rem;
+  font-weight: bold;
+
+}
+
+
+.header .addBtn{
+  outline: none;
+  border: none;
+  background-color: rgba(255,255,255, .05);
+  font-size: 3rem;
+  color: #fff;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.header__tile{
+  margin-top: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1rem;
+
+}
+
+
+.main-container{
+  display: flex;
+  flex-direction: column;
+
+}
+
+
+
+
+
+/* table  */
+
+table {
+  border-collapse: collapse;
+  margin-top: 1.5rem;
+  width: 100%;
+  table-layout: fixed;
+}
+
+table th{
+  font-size: 1.6rem;
+}
+
+
+table tr{
+  border-bottom: .2rem solid rgba(255,255,255, .05);
+  margin-bottom: 1rem;
+}
+
+
+table tbody tr td{
+  font-size: 1.5rem;
+  padding: 1rem 0;
+  font-weight: 550;
+}
+
+table tbody tr .actioner{
+  font-size: 2rem;
+}
+
+table tbody tr .actioner *{
+  cursor: pointer;
+  transition: 250ms;
+}
+
+table tbody tr .actioner *:hover{
+  transform: scale(1.1);
+}
+
+table th,
+table td {
+  text-align: center;
+}
+
+table td{
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+table th {
+  
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+
+@media screen and (max-width: 600px) {
+  table {
+    border: 0;
+  }
+
+
+  
+  table thead {
+    border: none;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+  }
+  
+  table tr {
+    display: block;
+    margin-bottom: 1rem;
+
+  }
+  
+  table td {
+    display: block;
+    font-size: .8em;
+    text-align: right;
+  }
+  
+  table td::before {
+    /*
+    * aria-label has no advantage, it won't be read inside a table
+    content: attr(aria-label);
+    */
+    content: attr(data-label);
+    float: left;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  
+  table td:last-child {
+    border-bottom: 0;
+  }
+}
+
+
+/* // logine form  */
+
+
+.login-box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  padding: 40px;
+  transform: translate(-50%, -50%);
+  background: rgba(255,255,255,.04);
+  box-sizing: border-box;
+  box-shadow: 0 15px 25px rgba(0,0,0,.6);
+  border-radius: 10px;
+}
+
+.login-box h2 {
+  margin: 0 0 30px;
+  padding: 0;
+  color: #fff;
+  text-align: center;
+}
+
+.login-box .user-box {
+  position: relative;
+}
+
+.login-box .user-box input {
+  width: 100%;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #fff;
+  margin-bottom: 30px;
+  border: none;
+  border-bottom: 1px solid #fff;
+  outline: none;
+  background: transparent;
+}
+.login-box .user-box label {
+  position: absolute;
+  top:0;
+  left: 0;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #fff;
+  pointer-events: none;
+  transition: .5s;
+}
+
+.login-box .user-box input:focus ~ label,
+.login-box .user-box input:valid ~ label {
+  top: -20px;
+  left: 0;
+  color: #03e9f4;
+  font-size: 12px;
+}
+
+.login-box .form .submitBtn {
+  position: relative;
+  display: inline-block;
+  padding: 10px 20px;
+  color: #03e9f4;
+  font-size: 16px;
+  text-decoration: none;
+  text-transform: uppercase;
+  overflow: hidden;
+  transition: .5s;
+  margin-top: 40px;
+  letter-spacing: 4px;
+  outline: none;
+  border: none;
+  background-color: rgba(255,255,255,.04);
+}
+
+.login-box .submitBtn:hover {
+  background: #03e9f4;
+  color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 5px #03e9f4,
+              0 0 25px #03e9f4,
+              0 0 50px #03e9f4,
+              0 0 100px #03e9f4;
+}
+
+.login-box .submitBtn span {
+  position: absolute;
+  display: block;
+}
+
+.login-box .submitBtn span:nth-child(1) {
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #03e9f4);
+  animation: btn-anim1 1s linear infinite;
+}
+
+@keyframes btn-anim1 {
+  0% {
+    left: -100%;
+  }
+  50%,100% {
+    left: 100%;
+  }
+}
+
+.login-box .submitBtn span:nth-child(2) {
+  top: -100%;
+  right: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(180deg, transparent, #03e9f4);
+  animation: btn-anim2 1s linear infinite;
+  animation-delay: .25s
+}
+
+@keyframes btn-anim2 {
+  0% {
+    top: -100%;
+  }
+  50%,100% {
+    top: 100%;
+  }
+}
+
+.login-box .submitBtn span:nth-child(3) {
+  bottom: 0;
+  right: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(270deg, transparent, #03e9f4);
+  animation: btn-anim3 1s linear infinite;
+  animation-delay: .5s
+}
+
+@keyframes btn-anim3 {
+  0% {
+    right: -100%;
+  }
+  50%,100% {
+    right: 100%;
+  }
+}
+
+.login-box .submitBtn span:nth-child(4) {
+  bottom: -100%;
+  left: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(360deg, transparent, #03e9f4);
+  animation: btn-anim4 1s linear infinite;
+  animation-delay: .75s
+}
+
+@keyframes btn-anim4 {
+  0% {
+    bottom: -100%;
+  }
+  50%,100% {
+    bottom: 100%;
+  }
+}
+
+
+
+
+
+
+
+
+
+.search{
+  width: 100%;
+  outline: none;
+  border: none;
+  padding: 1rem 2rem;
+  background-color: transparent;
+  border: .4rem solid rgba(255,255,255,.05);
+  color: #fff;
+  font-weight: bold;
+  font-size: 1.8rem;
+  margin-top: 1rem;
+}
+
+
+
+
+
